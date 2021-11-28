@@ -52,7 +52,7 @@ const Banner = () => {
             sx={{ py: 2 }}
             className={bannerText}
           >
-            Add Some Color to your life ok
+            Add Some Color to your life
           </Typography>
           <Button
             onClick={handleExploreBtn}
