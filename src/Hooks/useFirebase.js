@@ -66,11 +66,11 @@ const useFirebase = () => {
       setIsLoading(false);
     });
     return () => unsubscribe;
-  }, []);
+  }, [auth]);
 
   //admin check
   useEffect(() => {
-    fetch(`https://sleepy-retreat-03806.herokuapp.com/users/${user.email}`)
+    fetch(`https://hijibiji-data.onrender.com/users/${user.email}`)
       .then((res) => res.json())
       .then((data) => setAdmin(data.admin));
   }, [user.email]);
@@ -91,7 +91,7 @@ const useFirebase = () => {
   //save user to db
   const saveUser = (email, displayName) => {
     const user = { email, displayName };
-    fetch("https://sleepy-retreat-03806.herokuapp.com/users", {
+    fetch("https://hijibiji-data.onrender.com/users", {
       method: "POST",
       headers: {
         "content-type": "application/json",

@@ -9,7 +9,7 @@ import {
   Alert,
 } from "@mui/material";
 import loginBg from "../../../images/login.jpg";
-import { NavLink, useHistory } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import useAuth from "../../../Hooks/useAuth";
 
 const Register = () => {

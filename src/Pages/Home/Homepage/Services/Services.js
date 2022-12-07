@@ -6,7 +6,7 @@ const Services = () => {
   const [services, setServices] = useState([]);
 
   useEffect(() => {
-    const url = "https://sleepy-retreat-03806.herokuapp.com/services";
+    const url = "https://hijibiji-data.onrender.com/services";
     fetch(url)
       .then((res) => res.json())
       .then((data) => {

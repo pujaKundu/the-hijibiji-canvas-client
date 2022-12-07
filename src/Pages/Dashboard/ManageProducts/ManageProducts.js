@@ -9,7 +9,7 @@ import { Box } from "@mui/system";
 const ManageProducts = () => {
   const [services, setServices] = useState([]);
   useEffect(() => {
-    const url = `https://sleepy-retreat-03806.herokuapp.com/services`;
+    const url = `https://hijibiji-data.onrender.com/services`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setServices(data));
@@ -21,7 +21,7 @@ const ManageProducts = () => {
       "Are you sure , you want to delete product?"
     );
     if (proceed) {
-      const url = `https://sleepy-retreat-03806.herokuapp.com/services/${id}`;
+      const url = `https://hijibiji-data.onrender.com/services/${id}`;
       fetch(url, {
         method: "DELETE",
       })

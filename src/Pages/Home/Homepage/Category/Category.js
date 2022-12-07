@@ -6,7 +6,6 @@ import {
   Grid,
   Paper,
   Typography,
-  Box,
 } from "@mui/material";
 
 import React from "react";

@@ -13,19 +13,19 @@ const Purchase = () => {
   const { name, price } = serviceDetail;
   const { id } = useParams();
   useEffect(() => {
-    const url = `https://sleepy-retreat-03806.herokuapp.com/services/${id}`;
+    const url = `https://hijibiji-data.onrender.com/services/${id}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => {
         setServiceDetail(data);
       });
-  }, []);
+  }, [id]);
 
   const onSubmit = (data) => {
     data.paintingName = name;
     console.log(data);
     axios
-      .post("https://sleepy-retreat-03806.herokuapp.com/orders", data)
+      .post("https://hijibiji-data.onrender.com/orders", data)
       .then((res) => {
         console.log(res);
         alert("Order placed successfully");

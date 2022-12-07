@@ -10,17 +10,17 @@ const Orders = () => {
   const { user, isLoading } = useAuth();
   const [orders, setOrders] = useState([]);
   useEffect(() => {
-    const url = `https://sleepy-retreat-03806.herokuapp.com/orders?email=${user?.email}`;
+    const url = `https://hijibiji-data.onrender.com/orders?email=${user?.email}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setOrders(data));
-  }, []);
+  }, [user.email]);
   const handleCancelBtn = (id) => {
     console.log("delted", id);
 
     const proceed = window.confirm("Are you sure , you want to cancel order?");
     if (proceed) {
-      const url = `https://sleepy-retreat-03806.herokuapp.com/allOrders/${id}`;
+      const url = `https://hijibiji-data.onrender.com/allOrders/${id}`;
       fetch(url, {
         method: "DELETE",
       })

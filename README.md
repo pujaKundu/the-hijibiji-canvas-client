@@ -4,7 +4,7 @@ Visit website [The HijiBiji Canvas](https://the-hijibiji-canvas.web.app/).
 
 ## Technologies:
 
-React JS, Material-UI, Firebase, Node.js, Express.js, MongoDB, Heroku.
+React JS, Material-UI, Firebase, Node.js, Express.js, MongoDB, Render.
 
 ## About this website
 

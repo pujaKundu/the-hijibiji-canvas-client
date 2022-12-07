@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import Grid from "@mui/material/Grid";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
-import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { Button, CardHeader } from "@mui/material";
 //not needed
@@ -15,7 +14,7 @@ const SingleOrder = (props) => {
   const [isUpdated, setIsUpdated] = useState(false);
 
   useEffect(() => {
-    fetch("https://sleepy-retreat-03806.herokuapp.com/allOrders")
+    fetch("https://hijibiji-data.onrender.com/allOrders")
       .then((res) => res.json())
       .then((data) => setOrders(data));
   }, []);
@@ -24,7 +23,7 @@ const SingleOrder = (props) => {
 
     const proceed = window.confirm("Are you sure , you want to cancel order?");
     if (proceed) {
-      const url = `https://sleepy-retreat-03806.herokuapp.com/allOrders/${id}`;
+      const url = `https://hijibiji-data.onrender.com/allOrders/${id}`;
       fetch(url, {
         method: "DELETE",
       })
@@ -39,7 +38,7 @@ const SingleOrder = (props) => {
     }
   };
   const handleUpdateBtn = (id) => {
-    const orderUrl = `https://sleepy-retreat-03806.herokuapp.com/allOrders/${id}`;
+    const orderUrl = `https://hijibiji-data.onrender.com/allOrders/${id}`;
     fetch(orderUrl)
       .then((res) => res.json())
       .then((data) => {
@@ -54,7 +53,6 @@ const SingleOrder = (props) => {
     })
       .then((res) => res.json())
       .then((result) => {
-        console.log(result);
         if (result.modifiedCount) {
           setIsUpdated(true);
           alert("updated");
@@ -84,6 +82,7 @@ const SingleOrder = (props) => {
             onClick={() => handleCancelBtn(_id)}
             variant="contained"
             sx={{ bgcolor: "red", mt: 2 }}
+            style={{ marginRight: "5px" }}
           >
             Cancel Order
           </Button>

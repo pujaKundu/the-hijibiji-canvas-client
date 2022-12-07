@@ -14,18 +14,17 @@ import Purchase from "../../Purchase/Purchase/Purchase";
 
 const ServiceDetail = () => {
   const [serviceDetail, setServiceDetail] = useState({});
-  const { _id, name, description, url, price, type, size } = serviceDetail;
+  const { name, description, url, price, type, size } = serviceDetail;
   const { id } = useParams();
-  console.log(id);
   useEffect(() => {
-    const url = `https://sleepy-retreat-03806.herokuapp.com/services/${id}`;
+    const url = `https://hijibiji-data.onrender.com/services/${id}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
         setServiceDetail(data);
       });
-  }, []);
+  }, [id]);
   return (
     <Container
       style={{ marginBottom: "2%" }}

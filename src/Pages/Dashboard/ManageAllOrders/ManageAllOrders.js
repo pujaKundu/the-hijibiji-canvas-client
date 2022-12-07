@@ -5,17 +5,15 @@ import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 import { Button, CardHeader } from "@mui/material";
 import { Box } from "@mui/system";
-import { useParams } from "react-router";
-import SingleOrder from "../Orders/SingleOrder/SingleOrder";
 import useAuth from "../../../Hooks/useAuth";
 
 const ManageAllOrders = () => {
   const { isLoading } = useAuth();
   const [orders, setOrders] = useState([]);
   const [updatedOrder, setUpdatedOrder] = useState({});
-  const [isUpdated, setIsUpdated] = useState(null);
+
   useEffect(() => {
-    const url = `https://sleepy-retreat-03806.herokuapp.com/allOrders`;
+    const url = `https://hijibiji-data.onrender.com/allOrders`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setOrders(data));
@@ -25,7 +23,7 @@ const ManageAllOrders = () => {
 
     const proceed = window.confirm("Are you sure , you want to cancel order?");
     if (proceed) {
-      const url = `https://sleepy-retreat-03806.herokuapp.com/allOrders/${id}`;
+      const url = `https://hijibiji-data.onrender.com/allOrders/${id}`;
       fetch(url, {
         method: "DELETE",
       })
@@ -41,13 +39,13 @@ const ManageAllOrders = () => {
   };
 
   const handleUpdateBtn = (id) => {
-    const orderUrl = `https://sleepy-retreat-03806.herokuapp.com/allOrders/${id}`;
+    const orderUrl = `https://hijibiji-data.onrender.com/allOrders/${id}`;
     fetch(orderUrl)
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
         setUpdatedOrder(data);
-        // window.location.reload();
+        window.location.reload();
       });
 
     fetch(orderUrl, {

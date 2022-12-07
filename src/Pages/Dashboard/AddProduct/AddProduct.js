@@ -7,7 +7,7 @@ const AddProduct = () => {
   const onSubmit = (data) => {
     console.log(data);
     axios
-      .post("https://sleepy-retreat-03806.herokuapp.com/services", data)
+      .post("https://hijibiji-data.onrender.com/services", data)
       .then((res) => {
         alert("Added product successfully");
         reset();

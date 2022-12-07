@@ -12,7 +12,7 @@ import FormatQuoteIcon from "@mui/icons-material/FormatQuote";
 const Reviews = () => {
   const [reviews, setReviews] = useState([]);
   useEffect(() => {
-    const url = "https://sleepy-retreat-03806.herokuapp.com/reviews";
+    const url = "https://hijibiji-data.onrender.com/reviews";
     fetch(url)
       .then((res) => res.json())
       .then((data) => setReviews(data));

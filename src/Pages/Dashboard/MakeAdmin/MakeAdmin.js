@@ -9,7 +9,7 @@ const MakeAdmin = () => {
   };
   const handleAdminSubmit = (e) => {
     const user = { email };
-    const url = "https://sleepy-retreat-03806.herokuapp.com/users/admin";
+    const url = "https://hijibiji-data.onrender.com/users/admin";
     fetch(url, {
       method: "PUT",
       headers: {

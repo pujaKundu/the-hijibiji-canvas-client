@@ -9,7 +9,7 @@ const AddReview = () => {
   const onSubmit = (data) => {
     console.log(data);
     axios
-      .post("https://sleepy-retreat-03806.herokuapp.com/reviews", data)
+      .post("https://hijibiji-data.onrender.com/reviews", data)
       .then((res) => {
         console.log(res);
         alert("Review added successfully");
@@ -73,7 +73,6 @@ const AddReview = () => {
             width: "80%",
             padding: "10px",
             border: "none",
-            boxShadow: "1px 0px 5px #7F7C82",
             boxShadow: "1px 0px 5px #7F7C82",
             margin: "15px 0",
           }}
